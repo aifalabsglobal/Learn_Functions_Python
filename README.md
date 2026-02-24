@@ -17,7 +17,7 @@ This is an interactive learning page that walks through:
 - **Methods (class functions)** — instance, class, and static methods  
 - **Async functions** — `async`/`await`, concurrent tasks with `asyncio`
 
-Each topic includes a short description, a fuller explanation, “in plain words,” and **multiple use cases with code examples** you can copy and run.
+Each topic includes a short description, a fuller explanation, "in plain words," and **multiple use cases with code examples** you can copy and run.
 
 ## Tech stack
 
