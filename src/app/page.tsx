@@ -380,8 +380,9 @@ const loopsTopics = [
   { id: "loop-nested", title: "Nested loops", emoji: "📦", description: "Loops inside loops; typical for 2D or combinations.", explanation: "Inner loop runs fully for each outer iteration. Useful for matrices, Cartesian product, or nested structures.", kidExplanation: "A loop inside another loop: for each outer step, do all inner steps.", examples: [{ title: "Nested loop (e.g. table)", code: "for i in range(2):\n    for j in range(3):\n        print(i, j, end=\" \")\n    print()\n# 0 0, 0 1, 0 2\n# 1 0, 1 1, 1 2" }] },
 ];
 
-function AifaLogo() {
+function AifaLogo({ variant = "default" }: { variant?: "default" | "light" }) {
   const [imgError, setImgError] = useState(false);
+  const isLight = variant === "light";
   return (
     <span className="font-bold text-xl tracking-tight inline-flex items-center">
       {!imgError ? (
@@ -390,14 +391,14 @@ function AifaLogo() {
           alt="aifa"
           width={100}
           height={32}
-          className="h-8 w-auto object-contain"
+          className={`h-8 w-auto object-contain ${isLight ? "brightness-0 invert" : ""}`}
           unoptimized
           onError={() => setImgError(true)}
         />
       ) : (
         <>
-          <span className="text-[#2563eb]">ai</span>
-          <span className="text-neutral-800">fa</span>
+          <span className={isLight ? "text-blue-200" : "text-[#2563eb]"}>ai</span>
+          <span className={isLight ? "text-white" : "text-neutral-800"}>fa</span>
         </>
       )}
     </span>
@@ -491,9 +492,9 @@ export default function LearnersPage() {
         <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-indigo-400/20 rounded-full blur-3xl" />
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center z-10">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur-sm px-4 py-1.5 mb-6">
-            <Image src="/logo.svg" alt="" width={24} height={24} className="opacity-90" />
-            <span className="text-sm font-semibold text-white/95 uppercase tracking-wider">Python learner&apos;s track</span>
+          <div className="inline-flex items-center gap-3 rounded-full bg-white/15 backdrop-blur-sm px-4 py-2 mb-6">
+            <AifaLogo variant="light" />
+            <span className="text-sm font-semibold text-white/95 uppercase tracking-wider">Learner&apos;s track</span>
           </div>
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl drop-shadow-sm">
             Master Python: From Basics to Functions &amp; OOP
@@ -516,13 +517,13 @@ export default function LearnersPage() {
               <Image src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800" alt="" fill className="object-cover opacity-20" sizes="800px" />
             </div>
             <div className="relative flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
-              <div className="flex-shrink-0 w-20 h-20 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center">
-                <Image src="/logo.svg" alt="" width={48} height={48} className="opacity-95" />
+              <div className="flex-shrink-0 w-20 h-20 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center p-2 [&_img]:max-h-12">
+                <AifaLogo variant="light" />
               </div>
               <div>
                 <Badge className="mb-2 bg-white/20 text-white border-0">
                   <BookOpen className="w-3 h-3 mr-1" />
-                  Table of contents
+                  aifa · Table of contents
                 </Badge>
                 <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
                   Your learning path
@@ -957,7 +958,7 @@ export default function LearnersPage() {
                 Summary
               </h2>
               <p className="mt-2 text-neutral-700">
-                All topics at a glance in the same order: 1 Fundamentals → 2 Functions → 3 OOP.
+                aifa · All topics at a glance in the same order: 1 Fundamentals → 2 Functions → 3 OOP.
               </p>
             </div>
           </div>
@@ -1059,11 +1060,12 @@ export default function LearnersPage() {
       {/* Footer */}
       <footer className="border-t border-neutral-200 bg-neutral-50 py-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <button type="button" onClick={() => scrollTo("#hero")} className="flex items-center" aria-label="aifa">
+          <button type="button" onClick={() => scrollTo("#hero")} className="flex items-center gap-2" aria-label="aifa home">
             <AifaLogo />
+            <span className="text-sm font-medium text-neutral-600">aifa</span>
           </button>
           <p className="text-sm text-neutral-500">
-            Learner&apos;s track · Python functions &amp; OOP
+            Powered by <strong className="text-neutral-700">aifa</strong> · Learner&apos;s track · Python fundamentals, functions &amp; OOP
           </p>
         </div>
       </footer>
