@@ -1,30 +1,24 @@
 # Learn Functions in Python
 
-A learner's track for **different types of functions in Python**, built with [aifa](https://github.com/aifalabsglobal) — clear explanations, multiple use cases, and runnable code examples.
+A **Python learner's track** from [aifa](https://github.com/aifalabsglobal): fundamentals, function types, and object-oriented design — with clear explanations, multiple use cases, and runnable code examples.
 
 ## About
 
-This is an interactive learning page that walks through:
+One structured path through core Python:
 
-- **Built-in functions** — `print`, `len`, `min`, `max`, `sum`, `sorted`, `enumerate`, `zip`, and more  
-- **User-defined functions** — parameters, defaults, `*args`, `**kwargs`  
-- **Lambda functions** — one-liners for sorting, `map`, `filter`  
-- **Recursive functions** — factorial, sum, Fibonacci, base cases  
-- **Higher-order functions** — `map`, `filter`, `reduce`, functions that take or return functions  
-- **Generator functions** — `yield`, lazy sequences, reading large files  
-- **Nested functions** — helpers inside a function, returning inner functions  
-- **Closure functions** — stateful callbacks, counters, private state  
-- **Methods (class functions)** — instance, class, and static methods  
-- **Async functions** — `async`/`await`, concurrent tasks with `asyncio`
+1. **Fundamentals** — Data types (int, float, str, bool, None, bytes), collections (list, tuple, set, dict, range), operators, conditions (if/elif/else, ternary, match/case), and loops (for, while, break, continue, else).
+2. **Function types** — Built-in, user-defined, lambda, recursive, higher-order, generators, nested, closures, methods, and async.
+3. **Object-oriented (OOP)** — Classes and instances, instance vs class attributes, instance/class/static methods, `@property`, private and name mangling, inheritance and `super()`, multiple inheritance and MRO, ABCs, magic methods, composition vs inheritance, dataclasses, `__slots__`, context managers.
 
-Each topic includes a short description, a fuller explanation, "in plain words," and **multiple use cases with code examples** you can copy and run.
+Each topic has a short description, a fuller explanation, “in plain words,” and **multiple use cases with code examples** you can copy and run. Section banners use relevant images and copy.
 
 ## Tech stack
 
 - **Next.js** (App Router)
 - **React** + **TypeScript**
 - **Tailwind CSS**
-- **shadcn/ui**-style components
+- **shadcn/ui**–style components
+- **Next.js Image** (with Unsplash for section imagery)
 
 ## Quick start
 
@@ -32,20 +26,19 @@ Each topic includes a short description, a fuller explanation, "in plain words,"
 # Install dependencies
 npm install
 
-# Run development server (default: http://localhost:3005)
+# Run development server (http://localhost:3005)
 npm run dev
 ```
 
-Then open [http://localhost:3005](http://localhost:3005) in your browser.
+Open [http://localhost:3005](http://localhost:3005) in your browser.
 
 ## Build & deploy
 
 ```bash
-# Production build
 npm run build
 ```
 
-To host on **Vercel**: connect this repo in the [Vercel dashboard](https://vercel.com); it will detect Next.js and run `npm run build` automatically.
+Deploy on **Vercel** by connecting this repo; it will detect Next.js and run `npm run build` automatically.
 
 ## Repository
 
